@@ -28,7 +28,7 @@ hexo.config.markdown.anchors = Object.assign({
   separator: ''
 }, hexo.config.markdown.anchors);
 
-const renderer = require('hexo-renderer-markdown-it/lib/renderer');
+const renderer = require('./lib/renderer');
 
 renderer.disableNunjucks = Boolean(hexo.config.markdown.disableNunjucks);
 

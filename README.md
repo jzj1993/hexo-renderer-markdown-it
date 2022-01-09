@@ -1,5 +1,25 @@
 # hexo-renderer-markdown-it
 
+This is a forked version of [hexo-renderer-markdown-it](https://github.com/hexojs/hexo-renderer-markdown-it)
+
+We can write markdown file using relative path to refer the images with markdown grammar.
+
+When rendering images in markdown, the renderer will copy the images from `source/_posts` to `public/blog-imgs` and keep the same directory structure. And then fix the `src` attribute.
+
+For example:
+
+1. Hexo source dir is `/Users/xx/blog/source/`
+1. Post path is `/Users/xx/blog/source/_posts/dir/name.md`
+1. Post refers an image with relative path `img/pic.png`
+1. The real image path is `/Users/xx/blog/source/_posts/dir/img/pic.png`
+1. Image will be copied to `/Users/xx/blog/public/blog-imgs/dir/img/pic.png`
+1. Rendered src attribute in html is `/blog-imgs/dir/img/pic.png`
+
+
+It is tested on Mac, but not tested on Windows and Linux.
+
+----
+
 [![Build Status](https://travis-ci.org/hexojs/hexo-renderer-markdown-it.svg?branch=master)](https://travis-ci.org/hexojs/hexo-renderer-markdown-it)
 [![npm version](https://badge.fury.io/js/hexo-renderer-markdown-it.svg)](https://www.npmjs.com/package/hexo-renderer-markdown-it)
 [![npm dependencies](https://david-dm.org/hexojs/hexo-renderer-markdown-it.svg)](https://david-dm.org/hexojs/hexo-renderer-markdown-it)
